@@ -1,0 +1,26 @@
+{
+  "name": "date-components",
+  "version": "0.7",
+  "homepage": "https://github.com/max-pub/date-components",
+  "authors": [
+    "Max Fechner <max.fechner@gmail.com>"
+  ],
+  "description": "WebComponents to work with date/calendar",
+  "main": "index.html",
+  "keywords": [
+    "date",
+    "calendar",
+    "polymer"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#~1.2.3"
+  }
+}

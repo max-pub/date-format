@@ -1,0 +1,31 @@
+<script src="Date.format.js"></script>
+
+<dom-module id="date-format">
+    <template>
+        <style></style>
+        <span id='format'></span>
+    </template>
+</dom-module>
+
+
+<script>
+    Polymer({
+        is: 'date-format',
+        properties: {
+            date: {
+                type: String,
+                observer: 'process'
+            },
+            format: {
+                type: String,
+                observer: 'process'
+            }
+        },
+
+        process: function () {
+            if (this.date) var t = new Date(Date.parse(this.date));
+            else var t = new Date();
+            this.$.format.innerHTML = t.format(this.format);
+        },
+    });
+</script>
