@@ -77,43 +77,17 @@ textarea {
 }
 
 </style>
+<!--<link href='../../GitHub/style/font/josefin.300.css' rel='stylesheet' type='text/css'>-->
 <style>
-/*
 @font-face {
-    font-family: 'Source Sans Pro';
+    font-family: 'Source Code Pro';
     font-style: normal;
     font-weight: 300;
-    src: local('Source Sans Pro Light'), local('SourceSansPro-Light'), url("https://fonts.gstatic.com/s/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGMVNtom4QlEDNJaqqqzqdSs.woff") format('woff');
-}
-
-@font-face {
-    font-family: 'Source Sans Pro';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Source Sans Pro'), local('SourceSansPro-Regular'), url("https://fonts.gstatic.com/s/sourcesanspro/v9/ODelI1aHBYDBqgeIAH2zlNHq-FFgoDNV3GTKpHwuvtI.woff") format('woff');
-}
-
-@font-face {
-    font-family: 'Source Sans Pro';
-    font-style: normal;
-    font-weight: 600;
-    src: local('Source Sans Pro Semibold'), local('SourceSansPro-Semibold'), url("https://fonts.gstatic.com/s/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGCmgpmuQqK2I-L2S9cF65Ek.woff") format('woff');
-}
-*/
-
-
-/* latin-ext */
-
-@font-face {
-    font-family: 'Source Sans Pro';
-    font-style: normal;
-    font-weight: 300;
-    src: local('Source Sans Pro Light'), local('SourceSansPro-Light'), url("https://fonts.gstatic.com/s/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGDOFnJNygIkrHciC8BWzbCz3rGVtsTkPsbDajuO5ueQw.woff2") format('woff2');
-    unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+    src: local('source.code.300'), url("https://git.max.pub/style/font/source.code.300.ttf") format('ttf');
 }
 
 * {
-    font-family: 'Source Sans Pro';
+    font-family: 'Source Code Pro';
     font-weight: 300;
 }
 
@@ -7613,19 +7587,19 @@ this.fire('dom-change');
         DDDD: DAY4[(this.getDay() + 6) % 7],
         DDD: DAY3[(this.getDay() + 6) % 7],
         DD: (D < 10 ? ('0' + D) : ('' + D)),
-        D: D,
+        //        D: D,
         MMMM: MON4[this.getMonth()],
         MMM: MON3[this.getMonth()],
         MM: (M < 10 ? ('0' + M) : ('' + M)),
-        M: M,
+        //        M: M,
         YYYY: this.getFullYear(),
         YY: (this.getYear() - 100),
         hh: (h < 10 ? ('0' + h) : ('' + h)),
-        h: h,
+        //        h: h,
         mm: (m < 10 ? ('0' + m) : ('' + m)),
-        m: m,
+        //        m: m,
         ss: (s < 10 ? ('0' + s) : ('' + s)),
-        s: s,
+        //        s: s,
     };
     for (var typ in formats)
         format = format.replace(typ, formats[typ]);
@@ -7679,7 +7653,7 @@ this.fire('dom-change');
             input {
                 color: silver;
                 font-size: 0.9em;
-                text-align: right;
+                text-align: left;
                 border: none;
                 width: 300px;
             }
@@ -7696,9 +7670,9 @@ this.fire('dom-change');
                 <br>
                 <table>
                     <tbody><tr>
-                        <td>set Date</td>
-                        <td>
-                            <input value="{{date::input}}" placeholder="..." style="text-align:left;">
+                        <!--                        <td>set Date</td>-->
+                        <td colspan="2" style="text-align:left;">
+                            <input value="{{date::input}}" placeholder="..." style="text-align:left; color; gray; font-size:1.2em;width:400px;">
                         </td>
                     </tr>
                     <tr>
@@ -7748,6 +7722,15 @@ this.fire('dom-change');
                         </td>
                     </tr>
                 </tbody></table>
+                <br>
+                <br>
+                <p>
+                    Play around with formats and date. Currently supported are the following variables:
+                    <br>YYYY,YY
+                    <br>MMMM,MMM,MM
+                    <br>DDDD,DDD,DD
+                    <br>hh,mm,ss
+                </p>
             </article>
         </template>
         <script>
@@ -7756,9 +7739,10 @@ this.fire('dom-change');
                 ready: function () {
                     this.format1 = "YYYY-MM-DD";
                     this.format2 = "DDDD, DD. MMMM YYYY";
-                    this.format3 = "D.M.YY";
+                    this.format3 = "DD. MM. YYYY";
                     this.format4 = "MMM, DD. YYYY";
                     this.format5 = "DD. MMM YYYY, hh:mm";
+                    this.date = new Date().format('YYYY-MM-DD hh:mm:ss');
                 }
             });
         </script>

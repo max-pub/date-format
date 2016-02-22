@@ -1,7 +1,8 @@
 <title>Date Format</title>
 
 <link href='../style/base.css' rel='stylesheet' type='text/css'>
-<link href='../style/font.source.css' rel='stylesheet' type='text/css'>
+<!--<link href='../../GitHub/style/font/josefin.300.css' rel='stylesheet' type='text/css'>-->
+<link href='../style/font/source.code.300.css' rel='stylesheet' type='text/css'>
 
 <script src="../webcomponentsjs/webcomponents.min.js"></script>
 
@@ -24,7 +25,7 @@
             input {
                 color: silver;
                 font-size: 0.9em;
-                text-align: right;
+                text-align: left;
                 border: none;
                 width: 300px;
             }
@@ -41,9 +42,9 @@
                 <br/>
                 <table>
                     <tr>
-                        <td>set Date</td>
-                        <td>
-                            <input value="{{date::input}}" placeholder='...' style='text-align:left;' />
+                        <!--                        <td>set Date</td>-->
+                        <td colspan='2' style='text-align:left;'>
+                            <input value="{{date::input}}" placeholder='...' style='text-align:left; color; gray; font-size:1.2em;width:400px;' />
                         </td>
                     </tr>
                     <tr>
@@ -93,6 +94,15 @@
                         </td>
                     </tr>
                 </table>
+                <br/>
+                <br/>
+                <p>
+                    Play around with formats and date. Currently supported are the following variables:
+                    <br/>YYYY,YY
+                    <br/>MMMM,MMM,MM
+                    <br/>DDDD,DDD,DD
+                    <br/>hh,mm,ss
+                </p>
             </article>
         </template>
         <script>
@@ -101,9 +111,10 @@
                 ready: function () {
                     this.format1 = "YYYY-MM-DD";
                     this.format2 = "DDDD, DD. MMMM YYYY";
-                    this.format3 = "D.M.YY";
+                    this.format3 = "DD. MM. YYYY";
                     this.format4 = "MMM, DD. YYYY";
                     this.format5 = "DD. MMM YYYY, hh:mm";
+                    this.date = new Date().format('YYYY-MM-DD hh:mm:ss');
                 }
             });
         </script>
