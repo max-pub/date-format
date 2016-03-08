@@ -1,0 +1,143 @@
+<title>Date Format</title>
+
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+
+<link href='//git.max.pub/style/base.css' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Source Code Pro:300' rel='stylesheet' type='text/css'>
+<script src="../webcomponentsjs/webcomponents.min.js"></script>
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="date-format.html">
+
+<style>
+    body{
+        overflow-x: hidden;
+        padding:0 !important;
+    }
+    *{
+        font-family: "Source Code Pro";
+    }
+    @media (max-width:22cm){
+        article{
+            width: 100% !important;            
+            padding:0 !important;
+        }
+    }
+</style>
+
+<body>
+    <dom-module id='demo-tag'>
+        <style>
+            table {
+                font-size: 1.2em;
+            }
+
+            td:first-child {
+                color: silver;
+                text-align: right;
+                padding-right: 10px;
+            }
+
+            input {
+                color: silver;
+                font-size: 0.9em;
+                text-align: left;
+                border: none;
+                width: 300px;
+            }
+        </style>
+        <template>
+            <article class='a5'>
+                <h1>Date Format</h1>
+
+                <a href="https://github.com/max-pub/date-format">
+                    <img src="//git.max.pub/img/github.source.docs.png" />
+                </a>
+                <br/>
+                <br/>
+                <br/>
+                            <input value="{{format1::input}}" /> <br/>
+                            <date-format date="{{date}}" format="{{format1}}"></date-format>
+
+                <table>
+                    <tr>
+                        <!--                        <td>set Date</td>-->
+                        <td colspan='2' style='text-align:left;'>
+                            <input value="{{date::input}}" placeholder='...' style='text-align:left; color; gray; font-size:1.2em;width:400px;' />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <br/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input value="{{format1::input}}" />
+                        </td>
+                        <td>
+                            <date-format date="{{date}}" format="{{format1}}"></date-format>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input value="{{format2::input}}" />
+                        </td>
+                        <td>
+                            <date-format date="{{date}}" format="{{format2}}"></date-format>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input value="{{format3::input}}" />
+                        </td>
+                        <td>
+                            <date-format date="{{date}}" format="{{format3}}"></date-format>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input value="{{format4::input}}" />
+                        </td>
+                        <td>
+                            <date-format date="{{date}}" format="{{format4}}"></date-format>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input value="{{format5::input}}" />
+                        </td>
+                        <td>
+                            <date-format date="{{date}}" format="{{format5}}"></date-format>
+                        </td>
+                    </tr>
+                </table>
+                <br/>
+                <br/>
+                <p>
+                    Play around with formats and date. Currently supported are the following variables:
+                    <br/>YYYY,YY
+                    <br/>MMMM,MMM,MM
+                    <br/>DDDD,DDD,DD
+                    <br/>hh,mm,ss
+                </p>
+            </article>
+        </template>
+        <script>
+            Polymer({
+                is: 'demo-tag',
+                ready: function () {
+                    this.format1 = "YYYY-MM-DD";
+                    this.format2 = "DDDD, DD. MMMM YYYY";
+                    this.format3 = "DD. MM. YYYY";
+                    this.format4 = "MMM, DD. YYYY";
+                    this.format5 = "DD. MMM YYYY, hh:mm";
+                    this.date = new Date().format('YYYY-MM-DD hh:mm:ss');
+                }
+            });
+        </script>
+    </dom-module>
+
+
+    <demo-tag></demo-tag>
+</body>
