@@ -23,7 +23,9 @@
         },
 
         process: function () {
-            if (this.date) var t = new Date(Date.parse(this.date));
+            if (this.date) 
+                if(this.date*1==this.date) var t = new Date(this.date);
+                else var t = new Date(Date.parse(this.date));
             else var t = new Date();
             this.$.format.innerHTML = t.format(this.format);
         },
