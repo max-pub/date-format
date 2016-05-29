@@ -1,7 +1,7 @@
 {
-  "name": "date-components",
+  "name": "date-format",
   "version": "0.7",
-  "homepage": "https://github.com/max-pub/date-components",
+  "homepage": "https://github.com/max-pub/date-format",
   "authors": [
     "Max Fechner <max.fechner@gmail.com>"
   ],
