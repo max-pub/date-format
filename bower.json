@@ -1,12 +1,12 @@
 {
   "name": "date-format",
-  "version": "0.7.4",
+  "version": "0.7.5",
   "homepage": "https://github.com/max-pub/date-format",
   "authors": [
     "Max Fechner <max.fechner@gmail.com>"
   ],
   "description": "WebComponent to format date/time",
-  "main": "index.html",
+  "main": "date-format.html",
   "keywords": [
     "date",
     "polymer"
