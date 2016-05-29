@@ -1,25 +1,24 @@
 {
   "name": "date-format",
-  "version": "0.7.2",
+  "version": "0.7.3",
   "homepage": "https://github.com/max-pub/date-format",
   "authors": [
     "Max Fechner <max.fechner@gmail.com>"
   ],
-  "description": "WebComponents to work with date/calendar",
+  "description": "WebComponent to format date/time",
   "main": "index.html",
   "keywords": [
     "date",
-    "calendar",
     "polymer"
   ],
   "license": "MIT",
   "ignore": [
+    "old",
     "bower.json",
-    "demo",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
+    "icon.png",
+    "index.html",
+    "demo.html",
+    "README.md",
   ],
   "dependencies": {
     "polymer": "Polymer/polymer"
